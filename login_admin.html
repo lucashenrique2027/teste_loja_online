@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel ERP | Gestão Comercial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-panel">
+    <div class="sidebar">
+        <h2>GESTÃO</h2>
+        <ul>
+            <li onclick="navegar('dashboard')">Dashboard</li>
+            <li onclick="navegar('estoque')">Estoque/Fornecedores</li>
+            <li onclick="navegar('pedidos')">Vendas/Pagamentos</li>
+        </ul>
+    </div>
+
+    <main class="admin-content">
+        <div id="alertas" class="alert-container"></div>
+
+        <section id="section-estoque">
+            <h3>📦 Entrada de Mercadoria</h3>
+            <div class="form-row">
+                <input type="text" id="fornecedor" placeholder="Fornecedor (CNPJ/Nome)">
+                <input type="number" id="qtd-caixas" placeholder="Qtd de Caixas">
+                <input type="number" id="un-por-caixa" placeholder="Un por Caixa">
+                <button onclick="darEntradaEstoque()">Dar Entrada</button>
+            </div>
+        </section>
+
+        <section id="section-vendas">
+            <h3>🛒 Pedidos Recebidos</h3>
+            <table id="tabela-pedidos">
+                <thead>
+                    <tr>
+                        <th>ID Pedido</th>
+                        <th>Status</th>
+                        <th>Pagamento</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-pedidos"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

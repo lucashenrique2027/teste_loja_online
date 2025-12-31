@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte em Vidro | Loja Oficial</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Arte em Vidro</h1>
+            <div id="auth-status">
+                <button onclick="abrirModal('login')">Entrar</button>
+                <button onclick="abrirModal('cadastro')">Cadastrar</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="vitrine" class="produtos-grid">
+            </section>
+    </main>
+
+    <div id="modal-pedido" class="modal">
+        <div class="modal-content">
+            <h3>Pedido Confirmado!</h3>
+            <p>Use o QR Code abaixo para rastrear:</p>
+            <div id="qrcode"></div>
+            <button onclick="fecharModal()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
