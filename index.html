@@ -1,124 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arte em Vidro | Decoração Artesanal</title>
-    <link rel="icon" type="image/png" href="img/logoWhatsApp Image 2025-07-29 at 18.56.23.jpeg">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arte em Vidro | Loja Oficial</title>
+  <link rel="icon" type="image/png" href="img/logoWhatsApp Image 2025-07-29 at 18.56.23.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
-<div class="modal-overlay" id="cadastroModal">
-    <div class="modal-card">
-        <div class="modal-info">
-            <h2>Bem-vindo à Arte em Vidro</h2>
-            <p>Cadastre-se para receber ofertas exclusivas.</p>
-            <input id="nome" type="text" placeholder="Seu nome completo" />
-            <input id="email" type="email" placeholder="Seu melhor e-mail" />
-            <button class="btn-primary" onclick="fecharModal()">Explorar Galeria</button>
-            <span class="skip-link" onclick="fecharSemValidar()">Pular por enquanto</span>
-        </div>
-        <div class="modal-banner-ads">
-            <img src="img/lustre 1 ChatGPT Image 13 de ago. de 2025, 20_52_54.png" class="slide active" />
-            <img src="img/D Image 9 de set. de 2025, 18_12_38.png" class="slide" />
-        </div>
-    </div>
-</div>
-
 <header>
-    <div class="nav-container">
-        <h1 class="logo">Arte em <span>Vidro</span></h1>
-        <nav>
-            <a href="#sobre">Sobre</a>
-            <a href="#produtos">Galeria</a>
-            <a href="#contato">Contato</a>
-            <a href="admin.html" class="admin-access">Painel Gestão</a>
-        </nav>
-    </div>
+  <div class="nav-container">
+    <h1>Arte em Vidro</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Galeria</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero-banner">
-    <div class="hero-content">
-        <h2>Decoração artesanal com alma</h2>
-        <p>Peças únicas feitas à mão para transformar seu ambiente.</p>
-        <a href="#produtos" class="btn-cta">Ver Coleção</a>
-    </div>
+<div class="banner">Decoração artesanal com alma</div>
+
+<section id="sobre" class="sobre-nos">
+  <div class="coluna">
+    <img src="img/suqueira-20191216_074040.jpg" alt="Sobre Nós">
+  </div>
+  <div class="coluna">
+    <h2>Sobre Nós</h2>
+    <p>Transformamos garrafas e cristais em peças únicas de decoração. Cada item é feito com carinho, cuidado e estilo.</p>
+  </div>
 </section>
 
-<section id="sobre" class="section-container">
-    <div class="sobre-flex">
-        <div class="sobre-img">
-            <img src="img/suqueira-20191216_074040.jpg" alt="Ateliê Arte em Vidro">
-        </div>
-        <div class="sobre-text">
-            <span class="badge">Nossa História</span>
-            <h2>Transformação e Estilo</h2>
-            <p>Transformamos garrafas e cristais em peças únicas de decoração. Cada item é feito com carinho, cuidado e estilo, unindo sustentabilidade ao design moderno.</p>
-        </div>
-    </div>
+<section id="produtos" class="container">
+  <h2>Galeria de Produtos</h2>
+  <div id="vitrine" class="galeria"></div>
 </section>
 
-<section id="produtos" class="section-container">
-    <div class="section-header">
-        <h2>Galeria de Produtos</h2>
-        <p>Clique em comprar para gerar seu código de rastreio e falar conosco.</p>
-    </div>
-    
-    <div class="produtos-grid" id="vitrine">
-        </div>
-
-    <div class="carrossel-section">
-        <h3>Inspirações em Destaque</h3>
-        <div class="carrossel-track">
-            <img src="img/6 copos suqueira Image 1 de set. de 2025, 13_30_19.png">
-            <img src="img/copo-Image 9 de jul. de 2025, 20_37_00.png">
-            <img src="img/girasol WhatsApp Image 2025-08-13 at 17.14.00.jpeg">
-            <img src="img/Vaso de vidro com design geométrico.png">
-            <img src="img/taça- Image 28 de set. de 2025, 14_21_19.png">
-        </div>
-    </div>
-</section>
+<div id="modal-pedido" class="modal-overlay">
+  <div class="modal-box">
+    <h3>Pedido Registrado!</h3>
+    <p>Escaneie o QR Code abaixo para seu rastreio interno:</p>
+    <div id="qrcode"></div>
+    <button onclick="fecharModal()">Continuar para WhatsApp</button>
+  </div>
+</div>
 
 <footer id="contato">
-    <div class="footer-content">
-        <h3>Arte em Vidro</h3>
-        <p>Leve a arte para sua casa.</p>
-        <a href="https://wa.me/5511972011983" class="btn-whatsapp-fixed" target="_blank">Chamar no WhatsApp</a>
-        <p class="copyright">&copy; 2025 Arte em Vidro. Todos os direitos reservados.</p>
-    </div>
+  <p>&copy; 2025 Arte em Vidro. Todos os direitos reservados.</p>
 </footer>
-
-<div class="chatbot-wrapper">
-    <div class="chat-icon" onclick="toggleChat()">
-        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="Suporte">
-    </div>
-    <div class="chat-window" id="chatWindow">
-        <div class="chat-header">
-            <h4>Assistente Arte em Vidro</h4>
-            <button onclick="toggleChat()">×</button>
-        </div>
-        <div class="chat-body" id="chatBody">
-            <div class="msg-bot">Olá! Como posso transformar seu ambiente hoje?</div>
-            <div class="bot-options">
-                <button onclick="handleOption('pedido')">Fazer um pedido</button>
-                <button onclick="handleOption('estoque')">Ver disponibilidade</button>
-                <button onclick="sendToWhatsApp('Olá! Preciso de ajuda.')">Falar com Humano</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-pedido" class="modal-overlay" style="display:none;">
-    <div class="modal-card mini">
-        <h3>Pedido Registrado!</h3>
-        <p>Abaixo está o seu QR Code de rastreio interno:</p>
-        <div id="qrcode" class="qr-box"></div>
-        <button class="btn-primary" onclick="fecharPedido()">Concluído</button>
-    </div>
-</div>
 
 <script src="script.js"></script>
 </body>
